@@ -21,11 +21,11 @@ def main(page: Page):
                 "passwordConfirm":password.value,
                 "name":username.value
             })
-            print(record)
+            # print(record)
             listalluserresult.controls.clear()            
             get_all_user()
 
-            page.snack_bar = SnackBar(Text("success add user", size=30), bgcolor="blue")
+            page.snack_bar = SnackBar(Text("Success add user", size=15), bgcolor="green500")
             page.snack_bar.open = True
             page.update()
 
@@ -90,8 +90,10 @@ def main(page: Page):
                         Row([Text(u.username, size=25, weight="bold", color="black"),Text(u.created)], alignment="spaceBetween"),
                         Text(f'email: {u.email}'),
                         Text(f'verified: {u.verified}'),
-                    IconButton("Delete", bgcolor="red700", icon_color="white",data=u.id, on_click=deleteuser),
-                    IconButton("Edit", bgcolor="blue", icon_color="white", data=u, on_click=edituser),
+                        Row([
+                            IconButton("Edit", bgcolor="blue", icon_color="white", data=u, on_click=edituser),
+                            IconButton("Delete", bgcolor="red700", icon_color="white",data=u.id, on_click=deleteuser),
+                        ], alignment="spaceBetween")
                     ],alignment="spaceBetween")
                 )
             )
