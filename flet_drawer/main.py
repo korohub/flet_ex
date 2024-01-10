@@ -33,13 +33,14 @@ def main(page: Page):
             Container(
                 bgcolor="blue",
                 content=Row([
+                    
+                    Text("My pets", size=30, color="white"),
                     IconButton(
                         icon = "menu",
                         icon_color = "white",
-                        on_click = shownav
-                    ), 
-                    Text("My pets", size=30, color="white")
-                ])
+                        on_click = shownav,
+                    ),
+                ], alignment=MainAxisAlignment.END),
             )
         ])
     )
