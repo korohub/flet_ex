@@ -20,9 +20,9 @@ def main(page: Page):
         content=Text("hello", size=17), padding=10, bgcolor="red",
         width=page.window_width*0.7,
         height=page.window_height,
-        margin=margin.only(top=40),
+        margin=margin.only(top=44),
         offset=transform.Offset(-5,0),
-        animate_offset=animation.Animation(500)
+        animate_offset=animation.Animation(200)
     )
     
     layer = Container(
